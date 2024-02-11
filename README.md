@@ -1,11 +1,11 @@
 # docker-compose-seata
 ## 软件环境
 
-| 名称         | 版本   |      |
-| ------------ | ------ | ---- |
-| mysql        | 8      |      |
-| nacos-server | v2.2.0 |      |
-| seata        | 1.6.0  |      |
+| 名称         | 版本   |
+| ------------ | ------ |
+| mysql        | 8      |
+| nacos-server | v2.2.0 |
+| seata        | 1.6.0  |
 
 ### 步骤：
 1. 安装docker和安装docker-compose，怎么安装，自行百度   
