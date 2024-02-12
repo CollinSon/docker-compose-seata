@@ -55,9 +55,11 @@ services:
         SEATA_VERSION: "${SEATA_VERSION}"
     ports:
       - "${SEATA_HOST_PORT}:8091"
+      - "7091:7091"
     volumes:
       - ${LOG_PATH}/seata:/root/logs/seata
       - ${CONF_PATH}/seata/conf:/root/seata-config
+      - ./seata/resources:/seata-server/resources
     environment:
       SEATA_PORT: "${SEATA_HOST_PORT}"
       STORE_MODE: "${SEATA_STORE_MODE}"
