@@ -59,7 +59,7 @@ services:
     volumes:
       - ${LOG_PATH}/seata:/root/logs/seata
       - ${CONF_PATH}/seata/conf:/root/seata-config
-      - ./seata/resources:/seata-server/resources/resources
+      - ./seata/resources:/seata-server/resources
     environment:
       SEATA_PORT: "${SEATA_HOST_PORT}"
       STORE_MODE: "${SEATA_STORE_MODE}"
