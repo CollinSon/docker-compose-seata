@@ -24,6 +24,11 @@ services:
 
   mysql8:
     container_name: dcs_mysql8
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost", "--silent" ]
+      interval: 30s
+      timeout: 10s
+      retries: 3
     build:
       context: mysql8
       args:
@@ -60,6 +65,8 @@ services:
       SEATA_IP: "${SEATA_IP}"
     depends_on:
       nacos-server:
+        condition: service_healthy
+      mysql8:
         condition: service_healthy
     networks:
       - dcs
